@@ -1,0 +1,8 @@
+<h3><%= @question %></h3>
+<br />
+<% for choice in @choices: %>
+  <img class="question-choice" src="<%= choice %>" />
+<% end %>
+<br />
+<br />
+<button type="button" class="submit btn btn-default disabled">Submit</button>

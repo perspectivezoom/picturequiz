@@ -1,0 +1,1 @@
+<%= parseInt(@seconds / 60) %>:<%= if (@seconds % 60) > 9 then (@seconds % 60) else '0' + (@seconds % 60) %>

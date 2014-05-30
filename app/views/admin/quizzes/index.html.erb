@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Finished Quizzes</h1>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Created At</th>
+        <th>Questions Answered</th>
+        <th>Questions Correct</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @quizzes.each do |quiz| %>
+        <tr>
+          <td><%= quiz.email %></td>
+          <td><%= quiz.created_at.to_date.iso8601 %></td>
+          <td><%= quiz.quiz_responses.length %></td>
+          <td><%= quiz.quiz_responses.select { |quiz_response| quiz_response.question.correct_question_choice_id == quiz_response.question_choice_id }.length %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

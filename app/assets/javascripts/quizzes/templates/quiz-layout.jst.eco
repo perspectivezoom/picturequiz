@@ -1,0 +1,24 @@
+<div class="container quiz">
+  <div class="row">
+    <div class="col-sm-3">
+      <h1>Picture Quiz</h1>
+    </div>
+    <div class="col-sm-9">
+      <h1 class="timer"></h1>
+    </div>
+  </div>
+  <h3 class="info-text">Enter your email and click start to begin. You'll have 2 minutes to complete this quiz.</h3>
+  <div class="question"></div>
+  <div class="start hidden">
+    <br />
+    <div class="form-horizontal col-sm-3">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="email form-control" placeholder="bob@example.com">
+        </div>
+      </div>
+    </div>
+    <button type="button" class="start-button btn btn-default">Start</button>
+  </div>
+</div>

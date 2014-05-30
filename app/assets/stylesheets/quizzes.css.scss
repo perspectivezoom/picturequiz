@@ -1,0 +1,15 @@
+.quiz {
+  .question {
+    .question-choice {
+      border: 2px solid transparent;
+
+      &:hover {
+        border-color: gray;
+      }
+
+      &.selected {
+        border-color: chartreuse;
+      }
+    }
+  }
+}

@@ -11,9 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140529232226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "question_choices", force: true do |t|
+    t.integer  "question_id"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.string   "question_text"
+    t.integer  "correct_question_choice_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quiz_responses", force: true do |t|
+    t.integer  "quiz_id"
+    t.integer  "question_id"
+    t.integer  "question_choice_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "quiz_responses", ["quiz_id", "question_id", "question_choice_id"], name: "index_quiz_responses_on_quiz_and_question_and_question_choice", unique: true, using: :btree
+
+  create_table "quizzes", force: true do |t|
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
